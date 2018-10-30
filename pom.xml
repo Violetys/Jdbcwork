@@ -85,7 +85,7 @@
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ecore</artifactId>
-			<version>1.1.1.fc1b091</version>
+			<version>1.1.1.f6b6cfb</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
