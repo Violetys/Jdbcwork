@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <page title="ABI" rootjs="eacl/commonjs/ping.js,eacl/commonjs/serverfunc.js">
 	<items id="navigators">
-		<item id="welcome" url="abistudy/index.do" title="ABI学习框架首页"></item>
+		<item id="welcome" url="abistudy/studyindex.do" title="ABI学习框架首页"></item>
 	</items>
 	<items id="buttons">
 		<items id="eusermgr" arrow="true" icon="&#xe0ca;" baseCss="eui-coolbar-item-user">

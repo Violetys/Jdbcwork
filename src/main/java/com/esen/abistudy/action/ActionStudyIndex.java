@@ -14,28 +14,39 @@ import com.esen.util.JsonUtils;
 
 /**
  * 这里写类注释，说明这个类是干嘛的
+ * action的使用参考wiki：pageId=145719346
  *
  * @author admin
- * @since Aug 27, 2018
+ * @since 2018年11月15日
  */
 @Controller
-@RequestMapping("/abistudy/index")
+@RequestMapping("/abistudy/studyindex")
 public class ActionStudyIndex {
 
 	/**
-	 * 访问abistudy/index.do进入的页面
+	 * 访问abistudy/studyindex.do进入的方法，
+	 * 该方法返回abistudy文件夹下的testindex.ftl文件
+	 * 
+	 * @param req
+	 * @return
 	 */
 	@RequestMapping()
 	public String getIndexPage(HttpServletRequest req) {
-		req.setAttribute("data", getListDatas());
-		req.setAttribute("title", "列表");// title务必要写
+		//向ftl传数据
+		req.setAttribute("title", "列表");
+		//调整ftl界面
 		return "abistudy/testindex";
 	}
 
 	/**
-	 * ajax请求，前台可通过访问abistudy/index.do?action=refresh得到的参数
+	 * 前台ajax请求，前台可通过访问abistudy/index.do?action=getData进入该方法
+	 * 1、@ResponseBody 是ajax请求需要添加的注解
+	 * 2、注意  action=refresh 中间不要有空格
+	 * 
+	 * @param req
+	 * @return
 	 */
-	@RequestMapping(params = { "action=refresh" })
+	@RequestMapping(params = { "action=getData" })
 	@ResponseBody
 	public String refresh(HttpServletRequest req) {
 		return getListDatas();
