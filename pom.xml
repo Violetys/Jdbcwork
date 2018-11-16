@@ -70,87 +70,87 @@
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eutil</artifactId>
-			<version>1.1.1.f2cbabb</version>
+			<version>1.1.1.51f04d6</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ejdbc</artifactId>
-			<version>1.1.1.3b1cab1</version>
+			<version>1.1.1.8cb93e8</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
-			<artifactId>elicense</artifactId>
-			<version>1.1.1.a783e27</version>
+			<artifactId>elutil</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ecore</artifactId>
-			<version>1.1.1.f6b6cfb</version>
-		</dependency>
-		<dependency>
-			<groupId>com.esen</groupId>
-			<artifactId>eres</artifactId>
-			<version>1.1.1.437a78c</version>
+			<version>1.1.1.402dd0e</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eui</artifactId>
-			<version>1.1.1.2dc151f</version>
+			<version>1.1.1.41fb658</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eweb</artifactId>
-			<version>1.1.1.d604cb8</version>
+			<version>1.1.1.171075f</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esen</groupId>
+			<artifactId>eres</artifactId>
+			<version>1.1.1.9be8c8d</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ethreadpool</artifactId>
-			<version>1.1.1.940aea9</version>
-		</dependency>
-		<dependency>
-			<groupId>com.esen</groupId>
-			<artifactId>elog</artifactId>
-			<version>1.1.1.ea29561</version>
+			<version>1.1.1.1e57303</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eacl</artifactId>
-			<version>1.1.1.c8c2519</version>
+			<version>1.1.1.dcb9654</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esen</groupId>
+			<artifactId>elog</artifactId>
+			<version>1.1.1.6b4b6c9</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>edatasource-api</artifactId>
-			<version>1.1.1.efc6423</version>
+			<version>1.1.1.c8cb54e</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>edatasource</artifactId>
-			<version>1.1.1.45e8aa0</version>
+			<version>1.1.1.b0e6e82</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>edim</artifactId>
-			<version>1.1.1.bda38eb</version>
-		</dependency>
-		<dependency>
-			<groupId>com.esen</groupId>
-			<artifactId>emainframe</artifactId>
-			<version>1.1.1.5c6a49f</version>
+			<version>1.1.1.f790012</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>enotice</artifactId>
-			<version>1.1.1.eec6348</version>
-		</dependency>
-		<dependency>
-			<groupId>com.esen</groupId>
-			<artifactId>eregister</artifactId>
-			<version>1.1.1.0e24690</version>
+			<version>1.1.1.9f0914f</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>esysmgr</artifactId>
-			<version>1.1.1.023629f</version>
+			<version>1.1.1.ad4ccd1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esen</groupId>
+			<artifactId>emainframe</artifactId>
+			<version>1.1.1.4ffbfc6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esen</groupId>
+			<artifactId>ercommon</artifactId>
+			<version>1.1.1</version>
 		</dependency>
 
 		<dependency>
