@@ -9,6 +9,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.7</java.version>
+		<abi.version>1.1.2-SNAPSHOT</abi.version>
 		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 		<springfox-swagger2.version>2.2.2</springfox-swagger2.version>
 		<!-- 由于jackson反序列化的漏洞，升级jackson版本到2.9.4 -->
@@ -70,87 +71,92 @@
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eutil</artifactId>
-			<version>1.1.1.51f04d6</version>
+			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ejdbc</artifactId>
-			<version>1.1.1.8cb93e8</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>elutil</artifactId>
-			<version>1.1.1</version>
+			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ecore</artifactId>
-			<version>1.1.1.402dd0e</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eui</artifactId>
-			<version>1.1.1.41fb658</version>
+			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eweb</artifactId>
-			<version>1.1.1.171075f</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eres</artifactId>
-			<version>1.1.1.9be8c8d</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ethreadpool</artifactId>
-			<version>1.1.1.1e57303</version>
+			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>eacl</artifactId>
-			<version>1.1.1.dcb9654</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>elog</artifactId>
-			<version>1.1.1.6b4b6c9</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>edatasource-api</artifactId>
-			<version>1.1.1.c8cb54e</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>edatasource</artifactId>
-			<version>1.1.1.b0e6e82</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>edim</artifactId>
-			<version>1.1.1.f790012</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>enotice</artifactId>
-			<version>1.1.1.9f0914f</version>
+			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>esysmgr</artifactId>
-			<version>1.1.1.ad4ccd1</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>emainframe</artifactId>
-			<version>1.1.1.4ffbfc6</version>
+			<version>${abi.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.esen</groupId>
 			<artifactId>ercommon</artifactId>
-			<version>1.1.1</version>
+			<version>1.1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.esen</groupId>
+			<artifactId>econsole</artifactId>
+			<version>1.1.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
