@@ -15,8 +15,8 @@ import com.esen.core.Constants;
 
 /**
  * ABI框架学习程序主入口
- * @author chengf
- * @since 2018年6月25日
+ * @author xiongys
+ * @since 2019年7月30日
  */
 @SpringBootApplication(scanBasePackages = Constants.BASE_PACKAGE, exclude = { DataSourceAutoConfiguration.class,
 		DataSourceTransactionManagerAutoConfiguration.class, HibernateJpaAutoConfiguration.class,

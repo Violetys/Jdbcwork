@@ -16,8 +16,8 @@ import com.esen.util.JsonUtils;
  * 这里写类注释，说明这个类是干嘛的
  * action的使用参考wiki：pageId=145719346
  *
- * @author admin
- * @since 2018年11月15日
+ * @author xiongys
+ * @since 2019年8月2日
  */
 @Controller
 @RequestMapping("/abistudy/studyindex")

@@ -21,8 +21,8 @@ import com.esen.vfs2.impl.VfsOperatorImpl;
  * private Server server;
  * 但用autowired注入方式的类，一定不能是new出来的，否则不能用此方式。
  * 
- * @author chenlan
- * @since 2018-10-19
+ * @author xiongys
+ * @since 2019年8月2日
  */
 @Component
 public class Server {
