@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.esen.util.JsonUtils;
+import com.esen.util.StrFunc;
 
 /**
  * 这里写类注释，说明这个类是干嘛的
@@ -35,6 +36,7 @@ public class ActionStudyIndex {
 		//向ftl传数据
 		req.setAttribute("title", "列表");
 		//调整ftl界面
+		
 		return "abistudy/testindex";
 	}
 

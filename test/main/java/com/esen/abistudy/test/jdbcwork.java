@@ -160,7 +160,7 @@ public class jdbcwork {
 		//定义表名
 		String tableName = "COURSESCORE";
 				
-		//確保d:\\out.txt 存在
+		
 		File file = new File("D:\\esenfile\\CourseScore.txt");
 		try {
 			FileFunc.ensureExists(file, false, true);
