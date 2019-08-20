@@ -32,7 +32,7 @@ public class AbiStudyApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		
-		DbDefiner
+		
 		SpringApplication.run(AbiStudyApplication.class, args);
 	}
 }
