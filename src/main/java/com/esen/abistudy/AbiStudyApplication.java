@@ -12,6 +12,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.esen.core.Constants;
+import com.esen.jdbc.dialect.DbDefiner;
 
 /**
  * ABI框架学习程序主入口
@@ -30,6 +31,8 @@ public class AbiStudyApplication extends SpringBootServletInitializer {
 	}
 
 	public static void main(String[] args) {
+		
+		
 		SpringApplication.run(AbiStudyApplication.class, args);
 	}
 }
