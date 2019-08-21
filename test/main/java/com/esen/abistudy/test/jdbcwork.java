@@ -34,7 +34,7 @@ public class jdbcwork {
 	
 	
 	  //声明数据库连接池工厂 
-	private ConnectionFactory ConnectionFactory ;
+	private ConnectionFactory Connf ;
 		
 	/**
 	 * 获得数据库连接池工厂
@@ -42,13 +42,14 @@ public class jdbcwork {
 	 * @throws Exception 
 	 */
 	private  ConnectionFactory getConnectionFactory(String path) throws IOException {
-		if (ConnectionFactory == null) {
+		if (Connf == null) {
 			//加载jdbc资源配置文件
 			InputStream Is = jdbcwork.class.getResourceAsStream(path);
 			try {
 				Properties p = new Properties();
-				//连接池属性
+				//加载连接池属性
 				p.load(Is);
+				
 				/**PoolConnnectionFactory实现ConnectionFactory
 				 * 构造函数
 				 * 根据属性列表props构造连接池；
@@ -57,14 +58,14 @@ public class jdbcwork {
 				 * @param props
 				 *        连接池的属性集合；
 				 */
-				ConnectionFactory = new PoolConnectionFactory(null, p);
+				Connf = new PoolConnectionFactory(null, p);
 				
 			} finally {
 				Is.close();
 			}
 
 		}
-		return ConnectionFactory;
+		return Connf;
 	}
 	
 	
