@@ -28,41 +28,57 @@ import com.esen.util.FileFunc;
 /**
  * @author xiongys
  * @since 2019年8月20日
+ * jar包内容在jdbc和util项目中可见-.-
  */
 public class jdbcwork {
-	  //声明连接池工厂 
+	
+	
+	  //声明数据库连接池工厂 
 	private ConnectionFactory ConnectionFactory ;
 		
 	/**
-	 * 获取数据库连接池工厂单例对象
+	 * 获得数据库连接池工厂
+	 * @throws IOException 
 	 * @throws Exception 
 	 */
-	private synchronized  ConnectionFactory getConnectionFactory() throws Exception {
+	private  ConnectionFactory getConnectionFactory(String path) throws IOException {
 		if (ConnectionFactory == null) {
-			InputStream input = jdbcwork.class.getResourceAsStream("jdbc.conf");
+			//加载jdbc资源配置文件
+			InputStream Is = jdbcwork.class.getResourceAsStream(path);
 			try {
 				Properties p = new Properties();
-				try {
-					p.load(input);
-				} catch (IOException e) {
-					throw new RuntimeException("jdbc配置文件读取失败！");
-				}
+				//连接池属性
+				p.load(Is);
+				/**PoolConnnectionFactory实现ConnectionFactory
+				 * 构造函数
+				 * 根据属性列表props构造连接池；
+				 * @param poolname 
+				 *        连接池的名字，可以传null;
+				 * @param props
+				 *        连接池的属性集合；
+				 */
 				ConnectionFactory = new PoolConnectionFactory(null, p);
+				
 			} finally {
-				input.close();
+				Is.close();
 			}
 
 		}
 		return ConnectionFactory;
 	}
 	
+	
 	/**
-	 * 创建测试用表
+	 * 创建CourseScore表
    * @throws Exception
    */
 	private void createTable(ConnectionFactory connf) {
 			//定义表名
 			String tableName = "COURSESCORE";
+			/**
+		   * 获得一个数据定义接口
+		   * @return
+		   */
 			DbDefiner df = connf.getDbDefiner();
 			
 			//定义字段
@@ -252,9 +268,11 @@ public class jdbcwork {
 	 *main
 	 */
 	@Test
-	public void jdbcwork() {
+	public void main() {
 		try {
-			ConnectionFactory connf = getConnectionFactory();
+			//项目jdbc.conf路径
+			String path="jdbc.conf";
+			ConnectionFactory connf = getConnectionFactory(path);
 			createTable(connf);
 			ReadFile(connf);
 			WriteFile(connf);
