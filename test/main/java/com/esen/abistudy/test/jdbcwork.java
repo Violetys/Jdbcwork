@@ -102,7 +102,7 @@ public class jdbcwork {
 		//定义表名
 		String tableName = "COURSESCORE";
 		//资源释放规范
-		FileInputStream Fis = new FileInputStream(new File("D:\\大文件.txt"));
+		FileInputStream Fis = new FileInputStream(new File("D:\\esendev\\gitrepos4.8\\abistudy\\file\\大文件.txt"));
 		try {
 			InputStreamReader Isr = new InputStreamReader(Fis);
 			try {
@@ -160,72 +160,79 @@ public class jdbcwork {
 		//定义表名
 		String tableName = "COURSESCORE";
 				
-		
-		File file = new File("D:\\esenfile\\CourseScore.txt");
+		//设置文件路径
+		File path = new File("D:\\esenfile\\CourseScore.txt");
 		try {
-			FileFunc.ensureExists(file, false, true);
+			//esen.Util.FileFunc工具类
+			/**
+		   * 判断文件或目录是否存在，如果不存在则创建它，如果创建不成功，则触发异常
+		   * 如果已存在，但不是isdir并且isoverwrite=false时，触发异常
+		   * @param path 
+		   * @param isdir 是否是目录
+		   * @param isoverwrite 当文件存在并与isdir不一致时是否覆盖
+		   * @throws Exception 
+		   * 
+		   * 在文件创建不成功时抛出的异常要带上路径,否则无法知道是哪个文件创建不成功
+		   */
+			FileFunc.ensureExists(path, false, true);
+						
 		} catch (Exception e1) {
+		// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
-		FileOutputStream Fos = new FileOutputStream(file);
+		FileOutputStream Fos = new FileOutputStream(path);
 		try {
 			OutputStreamWriter Osw = new OutputStreamWriter(Fos);
 			try {
 				BufferedWriter Bw = new BufferedWriter(Osw);
 				try {
 				//写入头部信息
-					Bw.write("+------------------------------------------------------------------------------+");
+					Bw.write("+----------------------------------------------------------------------------------------------+");
 					Bw.newLine();
-					Bw.write(" |学号          |        姓名         |        班级        |        课程        |        成绩        |");
+					Bw.write("|   学号       |       姓名       |        班级        |       课程         |        成绩     |");
 					Bw.newLine();
-					Bw.write("+------------------------------------------------------------------------------+");
-					Connection conn = null;
-					try {
-						conn = connf.getConnection();
-						String sql = "select xh,xm,bj,kc,cj from " + tableName; 
+					Bw.write("+----------------------------------------------------------------------------------------------+");
+
+					Connection conn = connf.getConnection();
+						try {
+						String sql = "select xh ,xm ,bj ,kc ,cj from " + tableName; 
 						Statement stmt = conn.createStatement();
 						try {
 							ResultSet rs = stmt.executeQuery(sql);
 							try {
 								while(rs.next()) {
 									Bw.newLine();
-									//每行的学号信息
-									StringBuffer lineXhInfo = new StringBuffer("");
-									lineXhInfo.append(" |").append(rs.getString(1)).append("    ");
-									Bw.write(lineXhInfo.toString());
-									//每行的姓名信息
-									StringBuffer lineXmInfo = new StringBuffer("");
-									lineXmInfo.append("|        ").append(rs.getString(2));
+									//使用stringbuffer连接字符串
+									StringBuffer Sb = new StringBuffer("| ");
+									Sb.append(rs.getString(1)).append("      ");
+									//判断姓名字符串长度，规范格式
 									if(rs.getString(2).length() == 3) {
-										lineXmInfo.append("       |");
+										Sb.append("|     ").append(rs.getString(2)).append("     |");
 									}if(rs.getString(2).length() == 4) {
-										lineXmInfo.append("     |");
-									}	
-									Bw.write(lineXmInfo.toString());
-									//每行的班级信息
-									StringBuffer lineBjInfo = new StringBuffer("");
-									lineBjInfo.append("        ").append(rs.getString(3)).append("        |");
-									Bw.write(lineBjInfo.toString());
-									//每行的课程信息
-									StringBuffer lineKcInfo = new StringBuffer("");
-									lineKcInfo.append("        ").append(rs.getString(4)).append("        |");
-									Bw.write(lineKcInfo.toString());
-									//每行的成绩信息
-									StringBuffer lineCjInfo = new StringBuffer("");
-									lineCjInfo.append("        ").append(rs.getString(4)).append("        |");
-									Bw.write(lineCjInfo.toString());
+										Sb.append("|     ").append(rs.getString(2)).append("   |");
+									}															
+									Sb.append("        ").append(rs.getString(3)).append("        |");									
+									Sb.append("        ").append(rs.getString(4)).append("        |");
+									//判断成绩字符串长度，规范格式
+									if(rs.getString(5).length() == 1) {
+										Sb.append("        ").append(rs.getString(5)).append("          |");
+									}if(rs.getString(5).length() == 2) {
+										Sb.append("        ").append(rs.getString(5)).append("        |");
+									}if(rs.getString(5).length() == 3) {
+										Sb.append("        ").append(rs.getString(5)).append("      |");
+									}
+									//写入文件
+									Bw.write(Sb.toString());
 								}
 								Bw.newLine();
-								Bw.write("+------------------------------------------------------------------------------+");
+								Bw.write("+----------------------------------------------------------------------------------------------+");
 							}finally {
 								rs.close();
 							}
 						}finally{
 							stmt.close();
 						}
-					} catch (SQLException e) {
-						e.printStackTrace();
 					}finally {						
 							conn.close();						
 					}					
@@ -245,7 +252,7 @@ public class jdbcwork {
 	 *main
 	 */
 	@Test
-	public void testWeek01() {
+	public void jdbcwork() {
 		try {
 			ConnectionFactory connf = getConnectionFactory();
 			createTable(connf);
@@ -255,9 +262,5 @@ public class jdbcwork {
 			e.printStackTrace();
 		}
 	}
-	
-	
-
-	
 	
 }
